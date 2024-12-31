@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Transitional//EN” “http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd”>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+    <title>資料查詢下載系統</title>
+    <base target="_top">
+    <style type="text/css">
+      @charset "UTF-8";
+      @media (min-width: 320px) {
+        body, input, select, table {
+          font-family: 微軟正黑體, Verdana;
+          font-size: 20px;
+        }
+        .lab {
+          font-size: 28px;
+        }
+        .add2 {
+          font-size: 22px;
+        }
+        .add4 {
+          font-size: 24px;
+        }
+        .less2 {
+          font-size: 18px;
+        }
+        .less4 {
+          font-size: 16px;
+        }
+      }
+      @media (min-width: 576px) {
+        body, input, select, table {
+          font-family: 微軟正黑體, Verdana;
+          font-size: 22px;
+        }
+        .lab {
+          font-size: 30px;
+        }
+        .add2 {
+          font-size: 24px;
+        }
+        .add4 {
+          font-size: 26px;
+        }
+        .less2 {
+          font-size: 20px;
+        }
+        .less4 {
+          font-size: 18px;
+        }
+      }
+      @media (min-width: 768px) {
+        body, input, select, table {
+          font-family: 微軟正黑體, Verdana;
+          font-size: 24px;
+        }
+        .lab {
+          font-size: 32px;
+        }
+        .add2 {
+          font-size: 26px;
+        }
+        .add4 {
+          font-size: 28px;
+        }
+        .less2 {
+          font-size: 22px;
+        }
+        .less4 {
+          font-size: 20px;
+        }
+      }
+      @media (min-width: 992px) {
+        body, input, select, table {
+          font-family: 微軟正黑體, Verdana;
+          font-size: 26px;
+        }
+        .lab {
+          font-size: 34px;
+        }
+        .add2 {
+          font-size: 28px;
+        }
+        .add4 {
+          font-size: 30px;
+        }
+        .less2 {
+          font-size: 24px;
+        }
+        .less4 {
+          font-size: 22px;
+        }
+      }
+      @media (min-width: 1200px) {
+        body, input, select, table {
+          font-family: 微軟正黑體, Verdana;
+          font-size: 28px;
+        }
+        .lab {
+          font-size: 36px;
+        }
+        .add2 {
+          font-size: 30px;
+        }
+        .add4 {
+          font-size: 32px;
+        }
+        .less2 {
+          font-size: 26px;
+        }
+        .less4 {
+          font-size: 24px;
+        }
+      }
+      .b {
+        font-weight: 600;
+      }
+      .cr {
+        color: red;
+      }
+      .cbl {
+        color: blue;
+      }
+      .cg {
+        color: forestgreen;
+      }
+      .err {
+        font-size: 10px;
+      }
+      /*超連結的樣式*/
+      a:link {
+        /*超連結基本樣式*/
+        color: blue;
+        text-decoration: none;
+      }
+      a:visited {
+        /*超連結被點選過後的樣式*/
+	      color: blue;
+      }
+      a:hover {
+        /*超連結被滑鼠滑過的樣式*/
+	      color: red;
+	      text-decoration: underline;
+      }
+    </style>
+  <body>
+    <center>
+      <p><div class="lab cbl b">資料查詢下載系統</div></p>
+      <p><div><?!= errorMessage ?></div></p>
+      <!--頁尾說明-->
+      <?!= copyright ?>
+    </center>
+  </body>
+</html>

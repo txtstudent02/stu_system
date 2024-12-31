@@ -1,0 +1,222 @@
+<?
+var baseDataTitle1 =  dataSheet.getRange(2, 9).getValues();
+var baseData1 = dataSheet.getRange(position + 1, 9).getValues();
+var baseDataTitle2 =  dataSheet.getRange(2, 10).getValues();
+var baseData2 = dataSheet.getRange(position + 1, 10).getValues();
+var baseDataTitle3 =  dataSheet.getRange(2, 11).getValues();
+var baseData3 = dataSheet.getRange(position + 1, 11).getValues();
+?>
+<!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Transitional//EN” “http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd”>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+    <title><?= schoolName ?>資料查詢下載系統</title>
+    <base target="_top">
+    <style type="text/css">
+      @charset "UTF-8";
+      /*標籤的樣式：用於基本資料表格*/
+      label.one {
+        color: <?= bsLabelColor ?>;/*顏色:顏色英文名稱、RGB碼*/
+        font-weight: bold; /*字體粗細，正常normal*/
+      }
+      /*表格的樣式：基本資料3欄位的表格*/
+      .bs {
+        width: ; /*表格寬度*/
+        border: 1px black solid; /*框線的厚度、顏色、樣式*/
+        background-color: <?= bsBGColor ?>; /*底色:顏色英文名稱、RGB碼*/
+        color: <?= bsFontColor ?>; /*底色:顏色英文名稱、RGB碼*/
+        text-align: center; /*內容對齊方式*/
+        padding: 15px; /*欄位內內容與框線的寬度*/
+        border-collapse: collapse; /*框線為單一直線，若為collapse，前一個框線中間厚度無作用，另一個用法為separate*/
+      }
+      .op {
+        border: 1px black solid; /*框線的厚度、顏色、樣式*/
+        text-align: center; /*內容對齊方式*/
+        padding: 3px; /*欄位內內容與框線的寬度*/
+        border-spacing: 5px; /*框線中間厚(寬)度*/
+        border-collapse: collapse; /*框線為單一直線，若為collapse，前一個框線中間厚度無作用，另一個用法為separate*/
+      }
+      /*表格的樣式：輸出資料的表格*/
+      /*整體*/
+      .op {
+        width: ; /*表格寬度*/
+        border: 1px black solid; /*框線的厚度、顏色、樣式*/
+        text-align: center; /*內容對齊方式*/
+        padding: 10px; /*欄位內內容與框線的寬度*/
+        border-collapse: collapse; /*框線為單一直線，若為collapse，前一個框線中間厚度無作用，另一個用法為separate*/
+      }
+      /*顯示內容左欄樣式*/
+      .oph {
+        border: 1px black solid; /*框線的厚度、顏色、樣式*/
+        background-color: #FEEEED; /*底色:顏色英文名稱、RGB碼*/
+        text-align: center; /*內容對齊方式*/
+        padding: 10px; /*欄位內內容與框線的寬度*/
+        border-collapse: collapse; /*框線為單一直線，若為collapse，前一個框線中間厚度無作用，另一個用法為separate*/
+      }
+      /*顯示內容右欄樣式*/
+      .opc {
+        border: 1px black solid; /*框線的厚度、顏色、樣式*/
+        text-align: center; /*內容對齊方式*/
+        padding: 10px; /*欄位內內容與框線的寬度*/
+        border-collapse: collapse; /*框線為單一直線，若為collapse，前一個框線中間厚度無作用，另一個用法為separate*/
+      }
+      @media (min-width: 320px) {
+        body, input, select, table {
+          font-family: <?!= fontFamily ?>, Verdana;
+          font-size: 20px;
+        }
+        .lab {
+          font-size: 28px;
+        }
+        .add2 {
+          font-size: 22px;
+        }
+        .add4 {
+          font-size: 24px;
+        }
+        .less2 {
+          font-size: 18px;
+        }
+        .less4 {
+          font-size: 16px;
+        }
+      }
+      @media (min-width: 576px) {
+        body, input, select, table {
+          font-family: <?!= fontFamily ?>, Verdana;
+          font-size: 22px;
+        }
+        .lab {
+          font-size: 30px;
+        }
+        .add2 {
+          font-size: 24px;
+        }
+        .add4 {
+          font-size: 26px;
+        }
+        .less2 {
+          font-size: 20px;
+        }
+        .less4 {
+          font-size: 18px;
+        }
+      }
+      @media (min-width: 768px) {
+        body, input, select, table {
+          font-family: <?!= fontFamily ?>, Verdana;
+          font-size: 24px;
+        }
+        .lab {
+          font-size: 32px;
+        }
+        .add2 {
+          font-size: 26px;
+        }
+        .add4 {
+          font-size: 28px;
+        }
+        .less2 {
+          font-size: 22px;
+        }
+        .less4 {
+          font-size: 20px;
+        }
+      }
+      @media (min-width: 992px) {
+        body, input, select, table {
+          font-family: <?!= fontFamily ?>, Verdana;
+          font-size: 26px;
+        }
+        .lab {
+          font-size: 34px;
+        }
+        .add2 {
+          font-size: 28px;
+        }
+        .add4 {
+          font-size: 30px;
+        }
+        .less2 {
+          font-size: 24px;
+        }
+        .less4 {
+          font-size: 22px;
+        }
+      }
+      @media (min-width: 1200px) {
+        body, input, select, table {
+          font-family: <?!= fontFamily ?>, Verdana;
+          font-size: 28px;
+        }
+        .lab {
+          font-size: 36px;
+        }
+        .add2 {
+          font-size: 30px;
+        }
+        .add4 {
+          font-size: 32px;
+        }
+        .less2 {
+          font-size: 26px;
+        }
+        .less4 {
+          font-size: 24px;
+        }
+      }
+      .b {
+        font-weight: 600;
+      }
+      .cr {
+        color: red;
+      }
+      .cbl {
+        color: blue;
+      }
+      .cg {
+        color: forestgreen;
+      }
+      .err {
+        font-size: 10px;
+      }
+      /*超連結的樣式*/
+      a:link {
+        /*超連結基本樣式*/
+        color: blue;
+        text-decoration: none;
+      }
+      a:visited {
+        /*超連結被點選過後的樣式*/
+	      color: blue;
+      }
+      a:hover {
+        /*超連結被滑鼠滑過的樣式*/
+	      color: red;
+	      text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <p><div class="lab" style="font-family: <?= schoolNameFontFamily ?>; color: <?= schoolNameColor ?>; font-weight: <?= schoolNameFontWeight ?>;"><?= schoolName ?></div>
+      <div class="lab" style="font-family: <?= systemNameFontFamily ?>; color: <?= systemNameColor ?>; font-weight: <?= systemNameFontWeight ?>;"><?= systemName ?></div></p>
+      <table class="bs">
+        <tr>
+          <td class="bs"><label class="one"><?= baseDataTitle1 ?></label></td>
+          <td class="bs"><?= baseData1 ?></td>
+        </tr>
+        <tr>
+          <td class="bs"><label class="one"><?= baseDataTitle2 ?></label></td>
+          <td class="bs"><?= baseData2 ?></td>
+        </tr>
+        <tr>
+          <td class="bs"><label class="one"><?= baseDataTitle3 ?></label></td>
+          <td class="bs"><?= baseData3 ?></td>
+        </tr>
+      </table>
+      <br>
+      <table class="op">
+
+<!--資料呈現與網頁檔尾在「程式碼.gs」的「驗證與結果輸出」-->
