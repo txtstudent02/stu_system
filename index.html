@@ -1,0 +1,341 @@
+<?
+title1 = s['首頁登入第1項標題'];
+if(s['首頁登入第1項星號隱藏'] == '啟用'){
+  type1 = 'password';
+}else{
+  type1 = 'text';
+}
+hint1 = s['首頁登入第1項欄位提示語'];
+title2 = s['首頁登入第2項標題'];
+if(s['首頁登入第2項星號隱藏'] == '啟用'){
+  type2 = 'password';
+}else{
+  type2 = 'text';
+}
+hint2 = s['首頁登入第2項欄位提示語'];
+title3 = s['首頁登入第3項標題'];
+if(s['首頁登入第3項星號隱藏'] == '啟用'){
+  type3 = 'password';
+}else{
+  type3 = 'text';
+}
+hint3 = s['首頁登入第3項欄位提示語'];
+title4 = s['首頁登入第4項標題'];
+if(s['首頁登入第4項星號隱藏'] == '啟用'){
+  type4 = 'password';
+}else{
+  type4 = 'text';
+}
+hint4 = s['首頁登入第4項欄位提示語'];
+title5 = s['首頁登入第5項標題'];
+if(s['首頁登入第5項星號隱藏'] == '啟用'){
+  type5 = 'password';
+}else{
+  type5 = 'text';
+}
+hint5 = s['首頁登入第5項欄位提示語'];
+?>
+<!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Transitional//EN” “http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd”>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+    <base target="_top">
+    <style type="text/css">
+      @charset "UTF-8";
+      /*輸入提示字體大小*/
+      input::placeholder {
+        font-size: <?= fontSizePlaceholder ?>px; /*字型大小*/
+      }
+      /*標籤的樣式*/
+      label {
+        color: <?= loginTitleColor ?>;/*顏色:顏色英文名稱、RGB碼*/
+        font-weight: bold; /*字體粗細，正常normal*/
+      }
+      @media (min-width: 320px) {
+        body, input, select, table {
+          font-family: <?!= fontFamily ?>, Verdana;
+          font-size: 20px;
+        }
+        .lab {
+          font-size: 28px;
+        }
+        .add2 {
+          font-size: 22px;
+        }
+        .add4 {
+          font-size: 24px;
+        }
+        .less2 {
+          font-size: 18px;
+        }
+        .less4 {
+          font-size: 16px;
+        }
+        .hint {
+          font-size: 12px;
+        }
+      }
+      @media (min-width: 576px) {
+        body, input, select, table {
+          font-family: <?!= fontFamily ?>, Verdana;
+          font-size: 22px;
+        }
+        .lab {
+          font-size: 30px;
+        }
+        .add2 {
+          font-size: 24px;
+        }
+        .add4 {
+          font-size: 26px;
+        }
+        .less2 {
+          font-size: 20px;
+        }
+        .less4 {
+          font-size: 18px;
+        }
+        .hint {
+          font-size: 12px;
+        }
+      }
+      @media (min-width: 768px) {
+        body, input, select, table {
+          font-family: <?!= fontFamily ?>, Verdana;
+          font-size: 24px;
+        }
+        .lab {
+          font-size: 32px;
+        }
+        .add2 {
+          font-size: 26px;
+        }
+        .add4 {
+          font-size: 28px;
+        }
+        .less2 {
+          font-size: 22px;
+        }
+        .less4 {
+          font-size: 20px;
+        }
+        .hint {
+          font-size: 12px;
+        }
+      }
+      @media (min-width: 992px) {
+        body, input, select, table {
+          font-family: <?!= fontFamily ?>, Verdana;
+          font-size: 26px;
+        }
+        .lab {
+          font-size: 34px;
+        }
+        .add2 {
+          font-size: 28px;
+        }
+        .add4 {
+          font-size: 30px;
+        }
+        .less2 {
+          font-size: 24px;
+        }
+        .less4 {
+          font-size: 22px;
+        }
+        .hint {
+          font-size: 14px;
+        }
+      }
+      @media (min-width: 1200px) {
+        body, input, select, table {
+          font-family: <?!= fontFamily ?>, Verdana;
+          font-size: 28px;
+        }
+        .lab {
+          font-size: 36px;
+        }
+        .add2 {
+          font-size: 30px;
+        }
+        .add4 {
+          font-size: 32px;
+        }
+        .less2 {
+          font-size: 26px;
+        }
+        .less4 {
+          font-size: 24px;
+        }
+        .hint {
+          font-size: 16px;
+        }
+      }
+      .b {
+        font-weight: 600;
+      }
+      .cr {
+        color: red;
+      }
+      .cbl {
+        color: blue;
+      }
+      .cg {
+        color: forestgreen;
+      }
+      .err {
+        font-size: 10px;
+      }
+    </style>
+    <!--表單檢查-->
+    <script language="javascript">
+    function go(){
+      var err_msg='';
+      var item6Open = '<?= s['啟用變更驗證碼'] ?>';
+      if(item6Open == '啟用'){
+        item6.style.backgroundColor = 'transparent';
+        if(item6.value == ''){
+          item6.style.backgroundColor = '#FFEEFF';
+          err_msg = '\n驗證碼不能為空白。' + err_msg;
+          item6.focus();
+        }
+      }
+      var item5Open = '<?= s['首頁登入第5項啟用'] ?>';
+      if(item5Open == '啟用'){
+        item5.style.backgroundColor = 'transparent';
+        if(item5.value == ''){
+          item5.style.backgroundColor = '#FFEEFF';
+          err_msg = '\n<?= title5 ?>不能為空白。' + err_msg;
+          item5.focus();
+        }
+      }
+      var item4Open = '<?= s['首頁登入第4項啟用'] ?>';
+      if(item4Open == '啟用'){
+        item4.style.backgroundColor = 'transparent';
+        if(item4.value == ''){
+          item4.style.backgroundColor = '#FFEEFF';
+          err_msg = '\n<?= title4 ?>不能為空白。' + err_msg;
+          item4.focus();
+        }
+      }
+      var item3Open = '<?= s['首頁登入第3項啟用'] ?>';
+      if(item3Open == '啟用'){
+        item3.style.backgroundColor = 'transparent';
+        if(item3.value == ''){
+          item3.style.backgroundColor = '#FFEEFF';
+          err_msg = '\n<?= title3 ?>不能為空白。' + err_msg;
+          item3.focus();
+        }
+      }
+      var item2Open = '<?= s['首頁登入第2項啟用'] ?>';
+      if(item2Open == '啟用'){
+        item2.style.backgroundColor = 'transparent';
+        if(item2.value == ''){
+          item2.style.backgroundColor = '#FFEEFF';
+          err_msg = '\n<?= title2 ?>不能為空白。' + err_msg;
+          item2.focus();
+        }
+      }
+      item1.style.backgroundColor = 'transparent';
+      if(item1.value == ''){
+        item1.style.backgroundColor = '#FFEEFF';
+        err_msg = '\n<?= title1 ?>不能為空白。' + err_msg;
+        item1.focus();
+      }
+      if(err_msg == ''){
+        fm.submit();
+      }else{
+        err_msg= '表單填寫錯誤：' + err_msg;
+        alert(err_msg);
+      }
+    }
+    function renew(){
+      fm.reset();
+      item1.style.backgroundColor = 'transparent';
+      item2.style.backgroundColor = 'transparent';
+      item3.style.backgroundColor = 'transparent';
+      item4.style.backgroundColor = 'transparent';
+      item5.style.backgroundColor = 'transparent';
+      item6.style.backgroundColor = 'transparent';
+    }
+    </script>
+  </head>
+  <body>
+    <center>
+      <p><div class="lab" style="font-family: <?= schoolNameFontFamily ?>; color: <?= schoolNameColor ?>; font-weight: <?= schoolNameFontWeight ?>;"><?= schoolName ?></div>
+      <div class="lab" style="font-family: <?= systemNameFontFamily ?>; color: <?= systemNameColor ?>; font-weight: <?= systemNameFontWeight ?>;"><?= systemName ?></div></p>
+      <form id="fm" action="<?= serviceUrl ?>" method="POST">
+        <table>
+          <?!= gmailStatus?>
+          <tr id="input1">
+            <td><label><?= title1 ?></label></td>
+            <td>
+              <input id="item1" type="<?= type1 ?>" placeholder="<?= hint1 ?>" size="18" name= "item1">
+            </td>
+          </tr>
+          <tr id="input2" style="display: none;">
+            <td><label><?= title2 ?></label></td>
+            <td>
+              <label><input id="item2" type="<?= type2 ?>" placeholder="<?= hint2 ?>" size="18" name= "item2">
+            </td>
+          </tr>
+          <tr id="input3" style="display: none;">
+            <td><label><?= title3 ?></label></td>
+            <td>
+              <input id="item3" type="<?= type3 ?>" placeholder="<?= hint3 ?>" size="18" name= "item3">
+            </td>
+          </tr>
+          <tr id="input4" style="display: none;">
+            <td><label><?= title4 ?></label></td>
+            <td>
+              <input id="item4" type="<?= type4 ?>" placeholder="<?= hint4 ?>" size="18" name= "item4">
+            </td>
+          </tr>
+          <tr id="input5" style="display: none;">
+            <td><label><?= title5 ?></label></td>
+            <td>
+              <input id="item5" type="<?= type5 ?>" placeholder="<?= hint5 ?>" size="18" name= "item5">
+            </td>
+          </tr>
+          <tr id="input6" style="display: none;">
+            <td><label>驗證碼</label></td>
+            <td>
+              <input id="item6" type="password" placeholder="驗證碼預設為「<?!= s['驗證碼預設'] ?>」" size="18" name= "item6">
+            </td>
+          </tr>
+        </table>
+        <p>
+          <input type="button" value="查詢" onclick="javascript: go();">
+          <input type="button" value="重填" onclick="javascript: renew();">
+          <?!= vCode ?>
+          <div><?!= withGoogle ?></div>
+        </p>
+      </form>
+      <!--頁尾說明-->
+    </center>
+  </body>
+  <script language="javascript">
+    var item2Open = '<?= s['首頁登入第2項啟用'] ?>';
+    if(item2Open == '啟用'){
+      input2.style.display = 'table-row';
+    }
+    var item3Open = '<?= s['首頁登入第3項啟用'] ?>';
+    if(item3Open == '啟用'){
+      input3.style.display = 'table-row';
+    }
+    var item4Open = '<?= s['首頁登入第4項啟用'] ?>';
+    if(item4Open == '啟用'){
+      input4.style.display = 'table-row';
+    }
+    var item5Open = '<?= s['首頁登入第5項啟用'] ?>';
+    if(item5Open == '啟用'){
+      input5.style.display = 'table-row';
+    }
+    var item6Open = '<?= s['啟用變更驗證碼'] ?>';
+    var url = '<?= formUrl ?>';
+    if(item6Open == '啟用' && url != ''){
+      input6.style.display = 'table-row';
+    }
+  </script>
+</html>
